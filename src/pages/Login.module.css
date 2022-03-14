@@ -1,0 +1,141 @@
+.continer {
+  display: flex;
+  position: relative;
+  height: 50vh;
+  width: 50vw;
+  align-self: center;
+  padding: 0;
+  transition: all 1s ease-in-out;
+}
+
+.enterRight {
+  animation: enterRight 1s ease-in-out forwards;
+}
+
+.exitRight {
+  animation: exitRight 1s ease-in-out forwards;
+}
+
+.enterLeft {
+  animation: enterLeft 1s ease-in-out forwards;
+}
+
+.exitLeft {
+  animation: exitLeft 1s ease-in-out forwards;
+}
+
+.enterRightD {
+  animation: enterRightD 1s ease-in-out forwards;
+}
+
+.exitRightD {
+  animation: exitRightD 1s ease-in-out forwards;
+}
+
+.enterLeftD {
+  animation: enterLeftD 1s ease-in-out forwards;
+}
+
+.exitLeftD {
+  animation: exitLeftD 1s ease-in-out forwards;
+}
+
+@keyframes enterRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes exitRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes enterLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes exitLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes enterRightD {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes exitRightD {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(100%);
+    visibility: hidden;
+  }
+}
+
+@keyframes enterLeftD {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes exitLeftD {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(-100%);
+    visibility: hidden;
+  }
+}

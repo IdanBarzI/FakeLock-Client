@@ -1,0 +1,23 @@
+.btnSave {
+  color: var(--secondery-bg-color);
+  width: 100%;
+  padding: var(--gap-s);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnSave:hover {
+  background-color: var(--secondery-color);
+}
+
+.btnSave:disabled {
+  background-color: rgb(141, 143, 144);
+  cursor: not-allowed;
+}

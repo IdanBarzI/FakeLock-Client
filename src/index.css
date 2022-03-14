@@ -1,0 +1,77 @@
+:root {
+  --error-color: #ff0033;
+  --succes-color: rgb(25, 105, 4);
+
+  --defult-text-size: 1rem;
+
+  --gap: 20px;
+  --gap-m: 15px;
+  --gap-s: 10px;
+}
+
+[data-theme="dark"] {
+  --primary-color: #ffffff;
+  --secondery-color: #cccccc;
+
+  --from-shimmer: hsl(0, 5%, 21%);
+  --to-shimmer: hsl(0, 5%, 11%);
+
+  --orange-color: #f09630;
+  --secondery-bg-color: #264eca;
+  --purple-color: #4f005f;
+
+  --oppesit-primary-color: #1b1b1b;
+  --oppesit-secondery-color: #212121;
+  --oppesit-third-color: #363636;
+
+  --primary-bg-color: #222222;
+}
+
+[data-theme="light"] {
+  --primary-color: #222222;
+  --secondery-color: #212121;
+
+  --from-shimmer: hsl(0, 6%, 87%);
+  --to-shimmer: hsl(0, 4%, 79%);
+
+  --orange-color: #ff7b00;
+  --secondery-bg-color: #556fbb;
+  --purple-color: #a71ac3;
+
+  --oppesit-primary-color: #ffffff;
+  --oppesit-secondery-color: #cccccc;
+  --oppesit-third-color: #cccccc;
+
+  --primary-bg-color: #cccccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  background-image: url(./assets/back-ground.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html {
+  font-family: "Segoe UI";
+  font-size: var(--defult-text-size);
+}
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMsg {
+  color: var(--error-color);
+  font-size: 0.8rem;
+}
