@@ -22,14 +22,11 @@
   position: absolute;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   top: 0;
   width: 50%;
   height: 100%;
-}
-
-.icon:hover {
-  cursor: pointer;
 }
 
 .input {
@@ -39,5 +36,30 @@
 
 .btn {
   width: 50%;
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+
+.back:hover {
+  cursor: pointer;
+  color: var(--secondery-color);
+}
+
+.facebook {
+  position: absolute;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  color: transparent;
+  width: 16px;
+  height: 16px;
+  top: 35%;
+  right: -200%;
+}
+
+.fCon {
+  position: relative;
+}
+
+.facebook:hover {
+  cursor: pointer;
 }
