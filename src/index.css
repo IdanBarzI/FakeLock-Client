@@ -75,3 +75,8 @@ html {
   color: var(--error-color);
   font-size: 0.8rem;
 }
+
+.cancleBtn {
+  background-color: red;
+  color: #1da;
+}
