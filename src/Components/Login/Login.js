@@ -39,9 +39,18 @@ export const Form = () => {
     loginHandler();
   };
 
-  const responseFacebook = (response) => {
+  const responseFacebook = response => {
     console.log(response);
-  };
+  //   if (response.status !== "unknown"){
+
+  //     this.setState({
+  //     isLoggedIn: true,
+  //     name: response.name,
+  //     email: response.email,
+  //     picture: response.picture.data.url
+  //   });
+  // }
+    };
 
   const componentClicked = (response) => {
     console.log(response);
@@ -80,7 +89,7 @@ export const Form = () => {
       <Line justify="center">
         <div className={classes.fCon}>
           <FacebookLogin
-            appId="1088597931155576"
+            appId="3100337770189914"
             autoLoad={true}
             fields="name,email,picture"
             onClick={componentClicked}
