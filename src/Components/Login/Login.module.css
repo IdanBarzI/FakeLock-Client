@@ -60,6 +60,10 @@
   position: relative;
 }
 
+.icon {
+  color: var(--primary-color);
+}
+
 .facebook:hover {
   cursor: pointer;
 }

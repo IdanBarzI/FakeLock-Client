@@ -21,18 +21,18 @@ export const AppContextProvider = (props) => {
   const navigate = useNavigate();
 
   const logout = useCallback(() => {
+    navigate("/", { replace: true });
+    console.log("logout");
     setUser(null);
     localStorage.removeItem("user");
     setToken(null);
     localStorage.removeItem("token");
-    navigate("/", { replace: true });
   }, []);
 
   const login = (user, token) => {
     setUser(user);
     setToken(token);
-    // navigate("/admin/main-menu", { replace: true });
-
+    navigate("/profile", { replace: true });
     inactivityTime();
   };
 

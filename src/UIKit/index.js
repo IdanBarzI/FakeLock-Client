@@ -11,6 +11,7 @@ export { default as Card } from "./Layouts/Card";
 export { default as Typography } from "./Layouts/Typography/Typography";
 export { default as Pagination } from "./Layouts/pagination/Pagination";
 export { default as Shimmer } from "./Layouts/Shimmer/Shimmer";
+export { default as ProtectedRoute } from "./Layouts/ProtectedRoute/ProtectedRoute";
 
 //elements
 export { default as Button } from "./Elements/Button";

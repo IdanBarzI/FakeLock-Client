@@ -1,45 +1,48 @@
-import React, { useState, useCallback } from "react";
+import { useState, useCallback } from "react";
+import axios from "axios";
 
-const useFetch = () => {
+const useAxiosFetch = (requestConfig) => {
+  const [fetchError, setFetchError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   const sendRequest = useCallback(async (requestConfig, applyData) => {
+    console.log(requestConfig);
     setIsLoading(true);
-    setError(null);
+    setFetchError(null);
     try {
       const url = `${
         requestConfig.baseUrl
           ? requestConfig.baseUrl
           : process.env.REACT_APP_BASE_SERVER_URL
       }/${requestConfig.url}`;
+      console.log(url);
 
-      const response = await fetch(url, {
-        method: requestConfig.method ? requestConfig.method : "GET",
+      const response = await axios({
+        url,
         headers: {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
           "Content-Type": "application/json",
         },
-        body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
+        method: requestConfig.method ? requestConfig.method : "GET",
+        data: requestConfig.data ? requestConfig.data : null,
       });
-
-      if (!response.ok) {
+      if (response.status !== 200) {
         throw new Error();
       }
-
-      const data = await response.json();
+      const data = await response.data;
       applyData(data);
     } catch (err) {
-      setError(err.message || "Something went wrong!");
+      console.log(err);
+      setFetchError(err.message || "Something went wrong!");
     }
     setIsLoading(false);
   }, []);
 
   return {
     isLoading,
-    error,
+    fetchError,
     sendRequest,
   };
 };
 
-export default useFetch;
+export default useAxiosFetch;
