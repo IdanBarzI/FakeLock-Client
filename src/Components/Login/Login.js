@@ -38,7 +38,6 @@ export const Form = () => {
     event.preventDefault();
     loginHandler();
   };
-
   return (
     <form className={classes.form} onSubmit={formSubmissionHandler}>
       <h2 className={classes.header}>Login</h2>
@@ -71,7 +70,6 @@ export const Form = () => {
       </div>
       <Line justify="center">
         <div className={classes.fCon}>
-          <div className={classes.icon}>
             <Icon i="fab fa-google" />
           </div>
         </div>
