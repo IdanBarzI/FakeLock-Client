@@ -8,7 +8,7 @@ import AppContext from "../../context/AppContext";
 
 const NavBar = (props) => {
   const settingCtx = useContext(SettingsContext);
-  const { token, logout } = useContext(AppContext);
+  const { user, token, logout } = useContext(AppContext);
   const { isLoading, error, sendRequest: sendLogoutRequest } = useFetch();
 
   const logoutHandler = async () => {
@@ -18,7 +18,6 @@ const NavBar = (props) => {
         method: "POST",
       },
       (data) => {
-        console.log("logout handler");
         logout();
       }
     );
@@ -45,7 +44,7 @@ const NavBar = (props) => {
                   className={(navData) =>
                     navData.isActive ? classes.active : ""
                   }
-                  to="/profile"
+                  to={`/profile/${user._id}`}
                 >
                   Profile
                 </NavLink>

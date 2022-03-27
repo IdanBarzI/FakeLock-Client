@@ -20,7 +20,7 @@ const DropZone = (props) => {
 
     await sendUpdateAvatarRequest(
       {
-        url: `users/avatar`,
+        url: `users/me/avatar`,
         method: "post",
         data: formData,
       },

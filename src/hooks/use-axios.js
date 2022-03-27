@@ -6,7 +6,6 @@ const useAxiosFetch = (requestConfig) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const sendRequest = useCallback(async (requestConfig, applyData) => {
-    console.log(requestConfig);
     setIsLoading(true);
     setFetchError(null);
     try {
@@ -15,7 +14,6 @@ const useAxiosFetch = (requestConfig) => {
           ? requestConfig.baseUrl
           : process.env.REACT_APP_BASE_SERVER_URL
       }/${requestConfig.url}`;
-      console.log(url);
 
       const response = await axios({
         url,
@@ -32,7 +30,6 @@ const useAxiosFetch = (requestConfig) => {
       const data = await response.data;
       applyData(data);
     } catch (err) {
-      console.log(err);
       setFetchError(err.message || "Something went wrong!");
     }
     setIsLoading(false);

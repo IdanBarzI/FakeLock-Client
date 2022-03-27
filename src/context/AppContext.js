@@ -32,7 +32,7 @@ export const AppContextProvider = (props) => {
   const login = (user, token) => {
     setUser(user);
     setToken(token);
-    navigate("/profile", { replace: true });
+    navigate(`/profile/${user._id}`, { replace: true });
     inactivityTime();
   };
 
