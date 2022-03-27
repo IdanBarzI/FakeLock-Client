@@ -1,6 +1,5 @@
 //layouts
 export { default as Settings } from "./Layouts/Settings";
-// export { default as ProtectedRoute } from "./Layouts/ProtectedRoute";
 export { default as Layout } from "./Layouts/Layout";
 export { default as NavBar } from "./Layouts/NavBar";
 export { default as NotFound } from "./Layouts/NotFound";
@@ -11,6 +10,7 @@ export { default as Card } from "./Layouts/Card";
 export { default as Typography } from "./Layouts/Typography/Typography";
 export { default as Pagination } from "./Layouts/pagination/Pagination";
 export { default as Shimmer } from "./Layouts/Shimmer/Shimmer";
+export { default as ProtectedRoute } from "./Layouts/ProtectedRoute/ProtectedRoute";
 
 //elements
 export { default as Button } from "./Elements/Button";
@@ -27,3 +27,4 @@ export { default as Modal } from "./Elements/Modal/Modal";
 export { default as InputSearch } from "./Elements/InputSearch";
 export { default as Snackbar } from "./Elements/SnackBar/Snackbar";
 export { default as Prompt } from "./Elements/Prompt/Prompt";
+export { default as TextArea } from "./Elements/TextArea/TextArea";

@@ -24,10 +24,7 @@ const Input = (props) => {
             <span className="content-name">{props.name}</span>
           </label>
         </div>
-      </div>
-      {props.touched && props.hasError && (
-        <p className="error-msg">{props.errorMsg}</p>
-      )}
+      </div> 
     </div>
   );
 };

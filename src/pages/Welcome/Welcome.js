@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import CSSTransition from "react-transition-group/CSSTransition";
-import { Card } from "../UIKit";
-import { Form, Details } from "../Components/Login/Login";
+import { Card } from "../..//UIKit";
+import { Form, Details } from "../../Components/Login/Login";
 import {
   Form as SignUpForm,
   Details as SignUpDerails,
-} from "../Components/SignUp/SignUp";
+} from "../../Components/SignUp/SignUp";
 import classes from "./Welcome.module.css";
 
 const Welcome = () => {

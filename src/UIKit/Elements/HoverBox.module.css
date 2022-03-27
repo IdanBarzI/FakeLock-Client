@@ -26,7 +26,7 @@
   -moz-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
-  margin-top: 80%;
+  margin-top: 170%;
   margin-right: -35%;
   z-index: 100;
 }
@@ -37,7 +37,7 @@
   height: 0px;
   width: 0px;
   top: -8px;
-  left: 113px;
+  left: 40px;
 
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;

@@ -1,4 +1,10 @@
-import React, { useState, forwardRef, useImperativeHandle } from "react";
+import React, {
+  useState,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+  useEffect,
+} from "react";
 import ReactDOM from "react-dom";
 import CSSTransition from "react-transition-group/CSSTransition";
 import "./Snackbar.css";
@@ -12,17 +18,26 @@ const Snackbar = forwardRef((props, ref) => {
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [message, setMessage] = useState("");
   const [type, setType] = useState("");
+  const { current: instance } = useRef({});
 
   useImperativeHandle(ref, () => ({
     show(message, type) {
       setShowSnackbar(true);
       setMessage(message);
       setType(type);
-      setTimeout(() => {
+      instance.timer = setTimeout(() => {
         setShowSnackbar(false);
       }, 3000);
     },
   }));
+
+  useEffect(() => {
+    return () => {
+      console.log(instance);
+      instance.timer && clearTimeout(instance.timer);
+    };
+  }, []);
+
   return (
     <>
       {ReactDOM.createPortal(

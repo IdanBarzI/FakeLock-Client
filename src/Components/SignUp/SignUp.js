@@ -21,11 +21,13 @@ export const Form = () => {
           url: `users`,
           method: "POST",
           body: {
+            userName: formState.userName.value,
             email: formState.email.value,
             password: formState.password.value,
           },
         },
         (data) => {
+          console.log(data);
           login(data.user, data.token);
         }
       );
@@ -41,6 +43,18 @@ export const Form = () => {
     <form className={classes.form} onSubmit={formSubmissionHandler}>
       <h2 className={classes.header}>Signup</h2>
 
+      <div className={classes.input}>
+        <Input
+          name="User Name"
+          i="fa fa-user"
+          hasError={formState.userName.hasError}
+          errorMsg={formState.userName.error}
+          touched={formState.userName.touched}
+          onBlur={(e) => {
+            onFocusOut("userName", e.target.value, dispatch, formState);
+          }}
+        />
+      </div>
       <div className={classes.input}>
         <Input
           name="Email"
@@ -62,6 +76,12 @@ export const Form = () => {
           touched={formState.password.touched}
           onBlur={(e) => {
             onFocusOut("password", e.target.value, dispatch, formState);
+            onFocusOut(
+              "confirmPassword",
+              formState.confirmPassword.value,
+              dispatch,
+              formState
+            );
           }}
           type="password"
         />
@@ -75,6 +95,12 @@ export const Form = () => {
           touched={formState.confirmPassword.touched}
           onBlur={(e) => {
             onFocusOut("confirmPassword", e.target.value, dispatch, formState);
+            onFocusOut(
+              "password",
+              formState.password.value,
+              dispatch,
+              formState
+            );
           }}
           type="password"
         />

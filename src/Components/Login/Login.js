@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from "react";
+import React, { useState, useReducer, useContext } from "react";
 import useFetch from "../../hooks/use-fetch";
 import AppContext from "../../context/AppContext";
 import {
@@ -7,16 +7,16 @@ import {
   onFocusOut,
 } from "../../reducer/loginForm";
 import { Typography, Input, Line, Icon, Button } from "../../UIKit";
-import FacebookLogin from "react-facebook-login";
+import Facebook from "./Facebook/Facebook";
 import classes from "./Login.module.css";
 
 export const Form = () => {
+  console.log(process.env.FACEBOOK_LOGIN_KEY);
   const [formState, dispatch] = useReducer(formsReducer, initialState);
   const { login } = useContext(AppContext);
   const { isLoading, error, sendRequest: sendLoginRequest } = useFetch();
 
   const loginHandler = async () => {
-    console.log("object");
     if (formState.isFormValid) {
       await sendLoginRequest(
         {
@@ -38,24 +38,6 @@ export const Form = () => {
     event.preventDefault();
     loginHandler();
   };
-
-  const responseFacebook = response => {
-    console.log(response);
-  //   if (response.status !== "unknown"){
-
-  //     this.setState({
-  //     isLoggedIn: true,
-  //     name: response.name,
-  //     email: response.email,
-  //     picture: response.picture.data.url
-  //   });
-  // }
-    };
-
-  const componentClicked = (response) => {
-    console.log(response);
-  };
-
   return (
     <form className={classes.form} onSubmit={formSubmissionHandler}>
       <h2 className={classes.header}>Login</h2>
@@ -88,21 +70,15 @@ export const Form = () => {
       </div>
       <Line justify="center">
         <div className={classes.fCon}>
-          <FacebookLogin
-            appId="3100337770189914"
-            autoLoad={true}
-            fields="name,email,picture"
-            onClick={componentClicked}
-            callback={responseFacebook}
-            cssClass={classes.facebook}
-          />
-          <Typography className={classes.icon}>
             <Icon i="fab fa-google" />
-          </Typography>
+          </div>
         </div>
-        <Typography className={classes.icon}>
-          <Icon i="fab fa-facebook-f" />
-        </Typography>
+        <div className={classes.icon}>
+          <div className={classes.fCon}>
+            <Icon i="fab fa-facebook-f" />
+            <Facebook />
+          </div>
+        </div>
       </Line>
       <Typography>Forgot Your Password?</Typography>
 

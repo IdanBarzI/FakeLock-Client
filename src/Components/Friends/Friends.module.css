@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+.friendZone {
+  flex: 1;
+  background-color: var(--oppesit-primary-color);
+}
+.groupZone {
+  flex: 1;
+  background-color: var(--oppesit-primary-color);
+}
