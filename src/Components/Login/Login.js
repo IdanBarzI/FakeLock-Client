@@ -72,7 +72,7 @@ export const Form = () => {
         <div className={classes.fCon}>
             <Icon i="fab fa-google" />
           </div>
-        </div>
+        {/* </div> */}
         <div className={classes.icon}>
           <div className={classes.fCon}>
             <Icon i="fab fa-facebook-f" />

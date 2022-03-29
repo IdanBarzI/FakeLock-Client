@@ -6,6 +6,7 @@ const Welcome = React.lazy(() => import("./pages/Welcome/Welcome"));
 const Profile = React.lazy(() => import("./pages/Profile/Profile"));
 const Friends = React.lazy(() => import("./pages/Friends/Friends"));
 const Posts = React.lazy(() => import("./pages/Posts/Posts"));
+const Map = React.lazy(() => import ("./pages/Map/Map"))
 const NotFound = React.lazy(() => import("./pages/NotFound/NotFound"));
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/friends" element={<Friends />} />
             <Route path="/posts" element={<Posts />} />
+            <Route path="/map" element={<Map/>}/>
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
