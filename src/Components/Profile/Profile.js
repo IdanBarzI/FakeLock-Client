@@ -1,11 +1,9 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/use-axios";
-
 import AppContext from "../../context/AppContext";
 import DropZone from "./DropZone/DropZone";
 import { Typography, Button, Snackbar, Prompt, Shimmer } from "../../UIKit";
-
 import classes from "./Profile.module.css";
 
 export const Profile = () => {
