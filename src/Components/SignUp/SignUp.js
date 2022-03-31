@@ -15,6 +15,7 @@ export const Form = () => {
   const { isLoading, error, sendRequest: sendSignupRequest } = useFetch();
 
   const signupHandler = async () => {
+    console.log(formState);
     if (formState.isFormValid) {
       await sendSignupRequest(
         {
