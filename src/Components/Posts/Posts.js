@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 
 import NewPost from "./NewPost/NewPost";
 import { Typography, Button, Snackbar, Prompt, Shimmer } from "../../UIKit";
+import Timeline from "./Timeline/Timeline";
 
 export const Posts = () => {
   const snackbarRef = useRef(null);
@@ -37,7 +38,7 @@ export const Posts = () => {
         promptShow={promptShow}
         setPromptOnConfirm={setPromptOnConfirm}
       />
-
+      <Timeline/>
       <Snackbar ref={snackbarRef} />
 
       <Prompt
